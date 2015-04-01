@@ -1,4 +1,4 @@
-# Programming the Finite Element Method: %th Edition
+## Programming the Finite Element Method: 5th Edition
 
 This git repository contains the patches needed in order to build the libraries
 and programs from the book "Programming the Finite Element Method" by I.M/ Smith, D.V.Griffiths and L.Margetts
@@ -16,7 +16,7 @@ Version  | Date | URL | Notes
 ---------:|:------:|-----|-------
 5th_ed   | 2013 | http://inside.mines.edu/~vgriffit/5th_ed/ | *Current*
 4th_ed   | 2004 | http://inside.mines.edu/~vgriffit/4th_ed/ |
-3rd_ed   | c.1996  |     | site went down c. 1997 (workstation moved to Boulder)
+3rd_ed   | c.1996  |  ftp://golden.eng.man.ac.uk/pub/fe/feprogs.zip     | site went down c. 1997 (workstation moved to Boulder) see [README](http://www.ces.clemson.edu/~lonny/cmcu/fortran/fortran90/smith_fe3/00README.HTM)
 Numerical Methods | 2008 | http://inside.mines.edu/~vgriffit/NM/ |
 Risk Assesment | 2012 | http://courses.engmath.dal.ca/rfem/ | look at the list of source code references
 
