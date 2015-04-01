@@ -1,6 +1,7 @@
 FC=gfortran 
 LN=gfortran
 LIBS=lib/geomlib.a lib/mainlib.a 
+ARPACKLIB=lib/arpacklib.a
 MODS=lib/geom.mod lib/main.mod
 
 .PHONY: clean chap04 progs
@@ -23,9 +24,25 @@ lib/mainlib.a: library/main/*.f03
 	$(FC) -c ../library/main/*.f03 &&\
 	ar -r mainlib.a *.o &&  rm *.o
 
+lib/arpacklib.a: lib/libks.f90
+	cd lib &&\
+	$(FC) -c libks.f90 &&\
+	ar -r arpacklib.a *.o  &&  rm *.o
+
 # just an individual program
 bin/p41: $(LIBS)
 	$(FC) -Ilib -o $@ chap04/p41.f03 $(LIBS) 
+# this is broken? elap_time()
+bin/p57: $(LIBS)
+	$(FC) -Ilib -o $@ chap04/p41.f03 $(LIBS) 
+
+# this is mildy broken: double )) in write statements
+bin/p113: $(LIBS)
+	$(FC) -Ilib -o $@ chap11/p113.f03 $(LIBS) 
+
+# next (and p104) needs lancz1 from arpack which appears here as binary only :-(
+bin/p103: $(LIBS) $(ARPACKLIB)
+	$(FC) -Ilib -o $@ chap10/p103.f03 $(LIBS) $(ARPACKLIB)
 	
 # all prgrams in the whole book
 progs: $(LIBS) 
@@ -45,4 +62,4 @@ clean:
 
 # This removes everything build. Noote how we presreve bin/README.md
 distclean: clean
-	-rm $(LIBS) $(MODS) bin/*\.*
+	-rm $(LIBS) $(ARPACKLIB) $(MODS) bin/*\.*
