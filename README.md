@@ -4,7 +4,8 @@ This git repository contains the patches needed in order to build the libraries
 and programs from the book "Programming the Finite Element Method" by I.M/ Smith, D.V.Griffiths and L.Margetts
 
 ### Homepage 
-The publishers homepage for the book is http://www.wiley.com//legacy/wileychi/smith_griffiths_margetts/
+The publishers homepage for the book is http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1119973341.html
+See also http://www.wiley.com//legacy/wileychi/smith_griffiths_margetts/
 
 ### Downloads
 The primary site for the programs, libraries and example datafiles in teh book can be found at http://inside.mines.edu/~vgriffit/5th_ed/
