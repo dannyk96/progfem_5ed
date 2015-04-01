@@ -6,6 +6,19 @@ and programs from the book "Programming the Finite Element Method" by I.M/ Smith
 ### Homepage 
 The publishers homepage for the book is http://www.wiley.com//legacy/wileychi/smith_griffiths_margetts/
 
+### Downloads
+The primary site for the programs, libraries and example datafiles in teh book can be found at http://inside.mines.edu/~vgriffit/5th_ed/
+
+All versions
+
+Version  | Date | URL | Notes
+---------:|:------:|-----|-------
+5th_ed   | 2013 | http://inside.mines.edu/~vgriffit/5th_ed/ | *Current*
+4th_ed   | 2004 | http://inside.mines.edu/~vgriffit/4th_ed/ |
+3rd_ed   | c.1996  |     | site went down c. 1997 (workstation moved to Boulder)
+Numerical Methods | 2008 | http://inside.mines.edu/~vgriffit/NM/ |
+Risk Assesment | 2012 | http://courses.engmath.dal.ca/rfem/ | look at the list of source code references
+
 ### How to get the book
 The book can be purchased from http://www.amazon.co.uk/Programming-Finite-Element-Method-Smith/dp/1119973341/
 
