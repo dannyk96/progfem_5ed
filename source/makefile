@@ -11,13 +11,13 @@ all: geomlib.a mainlib.a apps
 lib/geomlib.a:
 	cd lib &&\
 	$(FC) -c ../library/geom/*.f03 && \
-	ar -r geomlib.a ../library/geom/*.o &&\
+	ar -r geomlib.a *.o &&\
 	rm *.o
 
 lib/mainlib.a:
 	cd lib &&\
 	$(FC) -c ../library/main/*.f03 &&\
-	ar -r mainlib.a ../library/main/*.o &&  rm *.o
+	ar -r mainlib.a *.o &&  rm *.o
 
 p41: $(LIBS)
 	$(FC) -Ilib -o $@ chap04/p41.f03 $(LIBS) 
