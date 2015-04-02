@@ -135,5 +135,47 @@ of which these appear to be of interest
    CALL dsymm('L','l',ndof,nels,one,km,ndof,g_pmul,ndof,one,g_utemp,ndof)
    CALL daxpy(neq,alpha,p,1,xnew,1)
    CALL daxpy(neq,alpha,u,1,loads,1)
+   CALL umat(sigma,statev,dee,sse,spd,scd,rpl,ddsddt,drplde,              &
  CALL dismsh_ensi(argv,nlen,nstep,nf,xnew(1:))
+```
+
+This gives:
+```
+$ make bin/p57
+gfortran  -Ilib -o bin/p57 chap05/p57.f03 lib/geomlib.a lib/mainlib.a
+/tmp/ccBJrxMe.o: In function `MAIN__':
+p57.f03:(.text+0x344): undefined reference to `elap_time_'
+p57.f03:(.text+0x3caa): undefined reference to `elap_time_'
+p57.f03:(.text+0x416d): undefined reference to `umat_'
+p57.f03:(.text+0x69d6): undefined reference to `dsymm_'
+p57.f03:(.text+0x6dc0): undefined reference to `ddot_'
+p57.f03:(.text+0x6df9): undefined reference to `ddot_'
+p57.f03:(.text+0x6e43): undefined reference to `daxpy_'
+p57.f03:(.text+0x6e91): undefined reference to `daxpy_'
+p57.f03:(.text+0x7098): undefined reference to `ddot_'
+p57.f03:(.text+0x7da6): undefined reference to `umat_'
+p57.f03:(.text+0x8ebd): undefined reference to `elap_time_'
+collect2: error: ld returned 1 exit status
+makefile:45: recipe for target 'bin/p57' failed
+make: *** [bin/p57] Error 1
+```
+   elap_time ()   wallclock timer?  in 4td_ed
+   umat()         unknown: suspect it is provided exerternaly as in ABAQUS
+   dysm(), ddot(), daxpy()  all in BLAS eg MKL
+
+A copy of elap_time() was found in teh 4th edition of the book in the file __parallel/utility.f95__ which impliments module _utility_
+
+``` Fortran
+!--------------------------------------------------------------------------
+
+       FUNCTION elap_time()
+       REAL(iwp) elap_time
+
+
+       INTEGER count, count_rate
+       CALL SYSTEM_CLOCK(count,count_rate)
+       elap_time = REAL(count,iwp)/REAL(count_rate,iwp)
+
+
+       END FUNCTION elap_time
 ```
