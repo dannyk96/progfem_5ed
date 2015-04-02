@@ -86,3 +86,54 @@ diff -cw chap04.orig/p45.f03 chap04/p45.f03
 ```
 
 __Note__: the datestamps on the original files show that they are 2007 which predated the 2013 new edition of this book :-)
+
+
+2. ddot in p57
+
+3. elap_time() in p57
+
+Google shows that this routine is found in __Parafem__ o
+see  https://searchcode.com/codesearch/view/11880409/
+
+Suspect that this is form the module:
+``` Fortran
+USE timing 
+```
+
+__Note:__  Although p57.dat and p57.f03 appears in the distribution, the compiled p57.exe does not!
+
+The full list of calls from p57 are:
+``` fortran
+$ grep -i call chap05/p57.f03
+ CALL getname(argv,nlen)
+ CALL mesh_size(element,nod,nels,nn,nxe,nye,nze)
+ CALL formnf(nf)
+ CALL sample(element,points,weights)
+   CALL hexahedron_xz(iel,x_coords,y_coords,z_coords,coord,num)
+   CALL num_to_g(num,nf,g)
+   CALL umat(sigma,statev,dee,sse,spd,scd,rpl,ddsddt,drplde,              &
+     CALL shape_der(der,points,i)
+     CALL invert(jac)
+     CALL beemat(bee,deriv)
+ CALL mesh_ensi(argv,nlen,g_coord,g_num,element,etype,nf,oldlds(1:),      &
+   CALL dsymm('L','l',ndof,nels,one,km,ndof,g_pmul,ndof,one,g_utemp,ndof)
+   CALL daxpy(neq,alpha,p,1,xnew,1)
+   CALL daxpy(neq,alpha,u,1,loads,1)
+   CALL checon(xnew,x,cg_tol,cg_converged)
+ CALL dismsh_ensi(argv,nlen,nstep,nf,xnew(1:))
+ CALL sample(element,points,weights)
+   CALL umat(sigma,statev,dee,sse,spd,scd,rpl,ddsddt,drplde,              &
+     CALL shape_der(der,points,i)
+     CALL shape_fun(fun,points,i)
+     CALL invert(jac)
+     CALL beemat(bee,deriv)
+```
+of which these appear to be of interest
+``` fortran
+ CALL getname(argv,nlen)
+ CALL mesh_ensi(argv,nlen,g_coord,g_num,element,etype,nf,oldlds(1:),      &
+   CALL dsymm('L','l',ndof,nels,one,km,ndof,g_pmul,ndof,one,g_utemp,ndof)
+   CALL daxpy(neq,alpha,p,1,xnew,1)
+   CALL daxpy(neq,alpha,u,1,loads,1)
+ CALL dismsh_ensi(argv,nlen,nstep,nf,xnew(1:))
+```
