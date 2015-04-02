@@ -6,7 +6,8 @@ A small number of problems were found with building and running the programs.
   #     | Problem | Sttaus    |    Summary   |
 :-------:|---------|----------|--------------|
    1    | segv crashes in p44 etc. |patched   | need to add _USE geom_ after _USE main_ . Cause was due to a change from which library __formnf()__ was kepy in
-
+   2    | p57 calls ddot etc. | to fix | Looks like this implicitly needs BLAS eg Intel MKL
+   3    | p57 calls elap_time() | to fix | elap_time() is not found anywhere else in this suite. Looks like it is a simple call to a wallclock timer?
 
    1  Segment violation in p44
 
@@ -34,6 +35,7 @@ chap04/p45.f03: CALL formnf(nf)
 
 Of the remaining:
 __p71.f03__ is 1D fluid flow. Only the two ends are boundary conditions so no nf() array
+
 __p81.f03__, __p82.f03__, __p83.f03__  Again all 1D problems - no 2d or 3d mesh and so no node freedom array nf().
 
 So these do not need patching.
@@ -83,4 +85,4 @@ diff -cw chap04.orig/p45.f03 chap04/p45.f03
 
 ```
 
-__Note__: the datestamps on teh original files show that they are 2007 which predated the 1023 new edition of this book :-)
+__Note__: the datestamps on the original files show that they are 2007 which predated the 2013 new edition of this book :-)
