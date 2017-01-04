@@ -20,6 +20,9 @@ Version  | Date | URL | Notes
 Numerical Methods | 2008 | http://inside.mines.edu/~vgriffit/NM/ |
 Risk Assesment | 2012 | http://courses.engmath.dal.ca/rfem/ | look at the list of source code references
 
+You may also be interested in a snapshot of the archive from the 1990s hosted by the WayBackWhen machibe :-)
+http://web.archive.org/web/20060623045132/http://www.eng.man.ac.uk/geotech/software/
+
 ### How to get the book
 The book can be purchased from http://www.amazon.co.uk/Programming-Finite-Element-Method-Smith/dp/1119973341/
 
