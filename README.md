@@ -29,7 +29,7 @@ The book can be purchased from http://www.amazon.co.uk/Programming-Finite-Elemen
 ### How I am connected to the book
 The owner of this git repository: Daniel Kidger worked with the authors during his period at the University of Manchester (1983-2001). He is particularly indebted to Prof. Ian Smith who was his Ph.D. Supervisor as well as his team leader during his subsequent years as a Post.Doc and Lecturer.
 
-This is the 5th Edition of the book - updated in 2013 [5th edition on AMAZON}(https://www.amazon.co.uk/Programming-Finite-Element-Method-Smith/dp/1119973341/)
+This is the 5th Edition of the book - updated in 2013 [5th edition on AMAZON](https://www.amazon.co.uk/Programming-Finite-Element-Method-Smith/dp/1119973341/)
 
 Previously:
    * The [4th Edition (2007)](http://www.amazon.co.uk/Programming-Finite-Element-Method-Smith-ebook/dp/B000QEIO1W/) has as its cover a mesh of Lamaload Dam on its cover. _I also get a small mention in the Acknnowledgements_. This was analysed and post-processed using the tools in [Danfe](https://github.com/dannyk96/Danfe). That suite of FE tools was developed fom the programs found in the 2nd Ediition of this book
