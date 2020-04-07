@@ -34,6 +34,6 @@ This is the 5th Edition of the book - updated in 2013
 Previously:
    * The [4th Edition (2007)](http://www.amazon.co.uk/Programming-Finite-Element-Method-Smith-ebook/dp/B000QEIO1W/) has as its cover a mesh of Lamaload Dam on its cover. _I also get a small mention in the Acknnowledgements_. This was analysed and post-processed using the tools in [Danfe](https://github.com/dannyk96/Danfe). That suite of FE tools was developed fom the programs found in the 2nd Ediition of this book
 
-   * The 3rd Edition had as its cover a 3D mesh of the LHC tunnels at CERN. Again this mesh was analaysed and plotted using derivations iof the programs in an earlier additon of this book
+   * The 3rd Edition had as its cover a 3D mesh of the Large Hadron Collider tunnels at CERN. Again this mesh was analaysed and plotted using derivations of the programs in an earlier additon of this book
 
 
